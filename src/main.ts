@@ -12,7 +12,8 @@ import {TaskEither} from 'fp-ts/TaskEither';
     name: string;
   };
 
-  const superSecretThing = "S3cr3t!Z!";
+  const superSecretThing = 'S3cr3t!Z!';
+  console.log(superSecretThing);
   /**
    * Fetch products
    * @param {string} path Endpoint of API
