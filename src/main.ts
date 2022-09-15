@@ -41,11 +41,11 @@ import {TaskEither} from 'fp-ts/TaskEither';
 
   if (isLeft(firstProductE)) {
     const left = getLeft(firstProductE);
-    console.log(left);
+    console.log("LEFT: ", left);
   } else if (isNone(getRight(firstProductE))) {
     console.log('Could not find product');
   } else if (isSome(getRight(firstProductE))) {
     const right = getRight(firstProductE);
-    console.log(right);
+    console.log("RIGHT: ", right);
   }
 })();
