@@ -1,10 +1,10 @@
-import axios, {AxiosResponse} from 'axios';
-import {taskEither} from 'fp-ts';
-import {pipe} from 'fp-ts/function';
-import {findFirst} from 'fp-ts/Array';
-import {getLeft, getRight, isNone, isSome} from 'fp-ts/Option';
-import {isLeft} from "fp-ts/Either";
-import {TaskEither} from "fp-ts/TaskEither";
+import axios, {AxiosResponse} from 'axios'
+import {taskEither} from 'fp-ts'
+import { pipe } from 'fp-ts/function'
+import { findFirst } from 'fp-ts/Array'
+import { getLeft, getRight, isNone, isSome } from 'fp-ts/Option'
+import { isLeft } from 'fp-ts/Either'
+import { TaskEither } from 'fp-ts/TaskEither'
 
 (async () => {
   type Product = {
@@ -16,7 +16,7 @@ import {TaskEither} from "fp-ts/TaskEither";
    * Fetch products
    * @param {string} path Endpoint of API
    */
-  const fetchProductsTE = ( path: string ): TaskEither<Error, AxiosResponse> =>
+  const fetchProductsTE = (path: string): TaskEither<Error, AxiosResponse> =>
     taskEither.tryCatch(
       () => axios.get<Product[]>('http://localhost:8080/' + path),
       () => new Error('Could not fetch products')
